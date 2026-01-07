@@ -40,10 +40,9 @@ const BlogsPage = async () => {
 };
 
 async function LoadBlogs() {
-  // 'use cache'
-  // cacheLife("hours")
-  // cacheTag("blogs-list")
-  await connection()
+  'use cache'
+  cacheLife("hours")
+  cacheTag("blogs-list")
   const data = await fetchQuery(api.blogs.getBlogs);
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
